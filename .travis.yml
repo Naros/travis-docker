@@ -12,4 +12,4 @@ before_install:
   - pwd
   - ls -la
   - ls -la ./_site
-  - la -la ./_site/documentation
+  - ls -la ./_site/documentation
