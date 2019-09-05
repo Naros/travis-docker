@@ -6,8 +6,11 @@ services:
 before_install:
   - docker pull antora/antora
   - pwd
+  - id
+  - id -u
+  - id -g
   - ls -la
-  - docker run --rm --privileged --user=travis:travis -v $(pwd):/site -w="/site" antora/antora --cache-dir=./_antora_cache playbook.yml
+  - docker run --rm --privileged --user=$UID:$UID -v $(pwd):/site -w="/site" antora/antora --cache-dir=./_antora_cache playbook.yml
   - docker ps -a
   - pwd
   - ls -la
