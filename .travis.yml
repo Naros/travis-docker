@@ -7,7 +7,7 @@ before_install:
   - docker pull antora/antora
   - pwd
   - ls -la
-  - docker run --rm --privileged -v $(pwd):/site -w="/site" antora/antora playbook.yml
+  - docker run --rm --privileged --user=$UID:$GID -v $(pwd):/site -w="/site" antora/antora playbook.yml
   - docker ps -a
   - pwd
   - ls -la
