@@ -5,6 +5,9 @@ services:
   - docker
 before_install:
   - docker pull antora/antora
-  - docker run --rm --privileged -v $(pwd):/site -w="/site" antora/antora playbook.yml
+  - pwd
+  - ls -la
+  - docker run --privileged -v $(pwd):/site -w="/site" antora/antora playbook.yml
   - docker ps -a
+  - pwd
   - ls -la
